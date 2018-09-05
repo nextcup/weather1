@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class netUtilImpl implements netUtil{
+public class NetUtilImpl implements NetUtil{
 	
 	@Override
 	public String getJson(String url) throws IOException{

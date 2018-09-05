@@ -10,7 +10,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
-public class jsonUtilImpl implements jsonUtil{
+public class JsonUtilImpl implements JsonUtil{
 	@Override
 	public List<String> getData(String json) {		
 		ArrayList<String>  lists = new ArrayList<String>();

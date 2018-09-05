@@ -14,8 +14,8 @@ public class controller {
 	
 	@RequestMapping("/search.do")
 	public String search(@RequestParam("location")String city,Model model)throws IOException {
-		netUtilImpl net = new netUtilImpl();
-		jsonUtilImpl json = new jsonUtilImpl();
+		NetUtilImpl net = new NetUtilImpl();
+		JsonUtilImpl json = new JsonUtilImpl();
 		city = URLEncoder.encode(city,"UTF-8");
 		String url = "https://api.seniverse.com/v3/weather/now.json?key=mtpmwyecaphmrzwc&location="+city+"&language=zh-Hans&unit=c";
 		String data = net.getJson(url);
