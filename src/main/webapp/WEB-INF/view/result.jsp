@@ -29,5 +29,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<h4>${timeOffset}</h4>
 		<h4>${weather}</h4>
 		<h4>${temperature}</h4>
+		<iframe scrolling="no" src="//tianqiapi.com/api.php?style=tp&skin=pitaya" frameborder="0" width="160" height="260 " allowtransparency="true"></iframe> 
 </body>
 </html>
