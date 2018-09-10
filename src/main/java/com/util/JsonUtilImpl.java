@@ -34,10 +34,10 @@ public class JsonUtilImpl implements JsonUtil{
 		JsonObject insideObject = jsonArray.get(0).getAsJsonObject();
 		//location
 		JsonElement location = insideObject.get("location").getAsJsonObject();
-		weather.setLocation(gson.fromJson(location,new TypeToken<bean.location>(){}.getType()));
+		weather.setResult(gson.fromJson(location,new TypeToken<bean.Result>(){}.getType()));
 		//weather now
-		JsonElement now = insideObject.get("now").getAsJsonObject();
-		weather.setWeather(gson.fromJson(now, new TypeToken<bean.weather>(){}.getType()));	
+		//JsonElement now = insideObject.get("now").getAsJsonObject();
+		//weather.setWeather(gson.fromJson(now, new TypeToken<bean.weather>(){}.getType()));	
 		return weather;
 	}
 }

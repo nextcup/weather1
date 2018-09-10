@@ -22,6 +22,7 @@
 var geolocation = new BMap.Geolocation();  
 var gc = new BMap.Geocoder();   
 var loc ="";
+var pinpoint = "";
  
 geolocation.getCurrentPosition( function(r) {   //定位结果对象会传递给r变量
  
@@ -31,8 +32,10 @@ geolocation.getCurrentPosition( function(r) {   //定位结果对象会传递给
 	        gc.getLocation(pt, function(rs){  
 	            var addComp = rs.addressComponents;  
 	            /* alert(addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber); */  
-				var loc = addComp.city;
+				loc = addComp.city;
+	            pinpoint = addComp.province + addComp.city + addComp.district + addComp.street + addComp.streetNumber;
 				document.getElementById("aa").value = loc;
+				document.getElementById("bb").innerHTML = pinpoint;
 	        });
 	    }
 	    else 
@@ -90,12 +93,13 @@ document.getElementById("aa").value = loc;
 <body onload = "init()">
 <form action="${pageContext.request.contextPath}/search.do" method="POST">
 你当前定位是：<br/>
+<div id ="bb"></div>
 <input type = "text" name="location" id ="aa">
 
 <input type = "submit" value = "查询">
 </form>
 
-
+<div id ="bb"></div>
 
 </body>
 

@@ -1,100 +1,120 @@
 package com;
 
+import java.util.List;
+
 public class bean {
-	private weather now;
-	private location loc;
-	public weather getWeather(){
-		return now;
+	public Result result;
+	public Result getResult() {
+		return result;
 	}
-	public void setWeather(weather now) {
-		this.now = now;
+	public void setResult(Result result) {
+		this.result = result;
 	}
-	public location getLocation() {
-		return loc;
-	}
-	public void setLocation(location loc) {
-		this.loc = loc;
-	}
-	
-	public class location{
-		private String id;
-		private String name;
-		private String path;
-		private String timezone;
-		private String timezone_offset;
-		
-		public String getID() {
-			return id;
-		}		
-		public String getName() {
-			return name;
+	public static  class Result{
+		public String city;
+		public String weather;
+		public String data;
+		public String temp;		
+		public String temphigh;
+		public String templow;
+		public Aqi aqi;
+		public List<Hourly>hourly;
+		public void setCity(String city) {
+			this.city = city; 
 		}
-		public String getPath() {
-			return path;
+		public String getCity() {
+			return city;
 		}
-		public String getTimezone() {
-			return timezone;
+		public void setWeather(String weather) {
+			this.weather = weather;
 		}
-		public String getTimeOffset() {
-			return timezone_offset;
-		}
-		public void setID(String id) {
-			this.id= id;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public void setPath(String path) {
-			this.path = path;
-		}
-		public void setTimezone(String timezone) {
-			this.timezone = timezone;
-		}
-		public void setTimeOffset(String offset) {
-			this.timezone_offset = offset;
-		}
-		@Override
-		public String toString() {
-			StringBuilder build = new StringBuilder();
-			build.append("ID: ");
-			build.append(id+"\n");
-			build.append("地名: ");
-			build.append(name+"\n");
-			String loc = build.toString();
-			return loc;
-		}
-	}
-	
-	public class weather{
-		private String text;
-		private String temperature;
-		public String getText() {
-			return text;	
-		}
-		public String getTemperature() {
-			return temperature;
-		}
-	
-		public void setText(String text) {
-			this.text = text;
-		}
-		public void setTemperature(String temperature) {
-			this.temperature= temperature;
-		}
-		@Override
-		public String toString() {
-			StringBuilder build = new StringBuilder();
-			build.append("天气: ");
-			build.append(text+"\n");
-			build.append("温度: ");
-			build.append(temperature+"℃");
-			String weather = build.toString();
+		public String getWeather() {
 			return weather;
 		}
+		public void setData(String data) {
+			this.data = data;
+		}
+		public String getData() {
+			return data;
+		}
+		public void setTemp(String temp) {
+			this.temp = temp;
+		}
+		public String getTemp() {
+			return temp;
+		}
+		public void getTemphigh(String temphigh) {
+			this.temphigh = temphigh;
+		}
+		public String getTemphigh() {
+			return temphigh;
+		}
+		
+		public static class Aqi{
+			public String pm2_5;
+			public void setPm2_5(String pm2_5) {
+				this.pm2_5 = pm2_5;
+			}
+			public String getPm2_5() {
+				return pm2_5;
+			}
+			@Override
+			public String toString() {
+				StringBuilder build = new StringBuilder();
+				build.append("PM2_5:");
+				build.append(pm2_5 + "\n");
+				String aqi =  build.toString();
+				return aqi;
+			}
+		}
+		
+		public static class Hourly{
+			public String temp;
+			public void setTemp(String temp) {
+				this.temp = temp;
+			}
+			public String getTemp(){
+				return temp;
+			}
+			@Override
+			public String toString() {
+				StringBuilder build = new StringBuilder();
+				build.append("Temp:");
+				build.append(temp + "\n");
+				String hourly =  build.toString();
+				return hourly;
+			}
+		}
+		@Override
+		public String toString() {
+			StringBuilder build = new StringBuilder();
+			build.append("CITY:");
+			build.append(city + "\n");
+			build.append("WEATHER:");
+			build.append(weather + "\n");
+			build.append("DATA:");
+			build.append(data + "\n");
+			build.append("TEMP:");
+			build.append(temp + "\n");
+			build.append("TEMPHIGH:");
+			build.append(temphigh + "\n");
+			build.append("TEMPLOW:");
+			build.append(templow + "\n");
+			String cityWeather = build.toString();
+			String result = cityWeather.toString() + aqi.toString() + 
+					hourly.toString(); 	
+			return result;
+		}
+		
 	}
 	@Override
 	public String toString() {
-		String inf = loc.toString() + now.toString();
-		return inf;
+	String inf = result.toString();
+	return inf;
 	}
 }
+
+
+
+
+

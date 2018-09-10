@@ -1,6 +1,6 @@
 package com;
 
-import java.io.IOException;
+/*import java.io.IOException;
 
 import org.springframework.ui.Model;
 
@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 
 public class test {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		controller controller = new controller();
 		Model model = null;
 		controller.search("º¼ÖÝ",model);
@@ -17,3 +17,4 @@ public class test {
 	}
 
 }
+*/

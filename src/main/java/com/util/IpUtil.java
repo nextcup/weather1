@@ -1,17 +1,17 @@
 package com.util;
 
-import java.net.InetAddress;
+/*import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
 import java.util.Enumeration;
  
-/**
+*//**
  *
  * @anthor leo
  * @date 2016年6月27日下午12:40:14
  * @description
  *
- **/
+ **//*
  
 public class IpUtil {
  
@@ -45,4 +45,4 @@ public class IpUtil {
 			return localip;
 		}
 	}
-}
+}*/
